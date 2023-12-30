@@ -13,7 +13,7 @@
 ### ターゲットユーザ
 * 車を使って食べに行く方
 * どこへ食べに行くか迷ってる方
-* 
+
 ###　主な利用シーン
 * 駐車場の有無を確認したい時
 * 何を食べるか迷った時
@@ -27,4 +27,4 @@
 * 言語 : HTML,CSS,JavaScript,Ruby,SQL
 * フレームワーク : Ruby on Rails
 * JSライブラリ : jQuery
-* IDE : cloud
+* IDE : cloud9
