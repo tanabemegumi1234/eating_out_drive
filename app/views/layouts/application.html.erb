@@ -8,6 +8,52 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<!-- user利用者側でログインしている時 -->
+    <% if user_signed_in? %>
+
+      <li>
+        <%= link_to "投稿一覧",  posts_path %>
+      </li>
+
+      <li>
+        <%= link_to "マイページ",  users_my_page_path %>
+      </li>
+
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+<!-- admin管理者側でログインしている時 -->
+    <% elsif admin_signed_in? %>
+
+      <li>
+        <%= link_to "投稿一覧", admin_posts_path %>
+      </li>
+
+      <li>
+        <%= link_to "使用者一覧", admin_users_path %>
+      </li>
+
+      <li>
+        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+      </li>
+
+<!-- ログインしていない時 -->
+    <% else %>
+<ul style="list-style: none;"><!-- 箇条書きの・を無くす -->
+      <li>
+        <%= link_to "投稿一覧",  posts_path %>
+      </li>
+
+      <li>
+        <%= link_to "新規登録",  new_user_registration_path %>
+      </li>
+
+      <li>
+        <%= link_to "ログイン",  new_user_session_path %>
+      </li>
+</ul>
+    <% end %>
   </head>
 
   <body>
