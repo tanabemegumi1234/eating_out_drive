@@ -9,9 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
+
 <!-- user利用者側でログインしている時 -->
     <% if user_signed_in? %>
-
+<ul style="list-style: none;"><!-- 箇条書きの・を無くす -->
       <li>
         <%= link_to "投稿一覧",  posts_path %>
       </li>
@@ -40,7 +42,7 @@
 
 <!-- ログインしていない時 -->
     <% else %>
-<ul style="list-style: none;"><!-- 箇条書きの・を無くす -->
+
       <li>
         <%= link_to "投稿一覧",  posts_path %>
       </li>
@@ -54,6 +56,7 @@
       </li>
 </ul>
     <% end %>
+
   </head>
 
   <body>

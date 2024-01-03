@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   scope module: :public do
     get '/posts' => 'posts#index'
     get '/users/my_page' => 'users#show'
+    get '/users/information/edit' => 'users#edit'
   end
 end
