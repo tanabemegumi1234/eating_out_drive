@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to:'public/homes#top'
-  get 'admin/posts'  => 'admin/posts#index'
+  get 'admin/posts' => 'admin/posts#index'
   # 利用者用
   # URL /customers/sign_in 
   devise_for :users, skip: [:passwords], controllers: {
@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     get '/posts' => 'posts#index'
     get '/users/my_page' => 'users#show'
     get '/users/information/edit' => 'users#edit'
+    patch '/users/information' => 'users#update'
   end
 end
