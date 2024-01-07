@@ -13,13 +13,17 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
+  
+  # 管理者用
   namespace :admin do
     get '/users' => 'users#index'
   end
+  # 利用者用
   scope module: :public do
     get '/posts' => 'posts#index'
     get '/users/my_page' => 'users#show'
     get '/users/information/edit' => 'users#edit'
     patch '/users/information' => 'users#update'
+    get 'users' => 'users#quit'# 退会確認画面
   end
 end
