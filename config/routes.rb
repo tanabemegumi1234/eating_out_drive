@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     get '/users/my_page' => 'users#show'
     get '/users/information/edit' => 'users#edit'
     patch '/users/information' => 'users#update'
-    get 'users' => 'users#quit'# 退会確認画面
+    get 'users/quit' => 'users#quit'# 退会確認画面
+    patch  '/users/withdraw' => 'users#withdraw'# 論理削除用のルーティング
+    resources :posts, only: [:new, :index, :show, :create]
   end
 end

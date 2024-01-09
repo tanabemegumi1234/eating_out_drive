@@ -16,6 +16,14 @@ class Public::UsersController < ApplicationController
     end
   end
 
+  def withdraw
+    @user = User.find(current_user.id)
+    @user.update(is_deleted: true) # is_deletedカラムをtrueに変更することにより削除フラグを立てる
+    reset_session #セッション情報を全て削除します。
+    flash[:notice] = "退会処理が完了いたしました。"
+    redirect_to root_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:full_name, :furigana, :email, :encrypted_password, :telephone_number, :login_name )
