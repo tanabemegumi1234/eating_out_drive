@@ -27,3 +27,39 @@
         <td><%= @user.login_name %></td>
     </tr>
 </table>
+
+<h2>MY投稿一覧</h2>
+
+<table>
+<% @posts.each do |post| %>
+<tr>
+ <%= link_to post_path(post.id) do %>
+ <%= image_tag post.get_image %>
+ <% end %>
+</tr>
+
+<tr>
+ <th>店舗名</th>
+ <td><%= post.name %></td>
+</tr>
+
+<tr>
+ <th>店舗URL</th>
+ <td><%= post.url %></td>
+</tr>
+
+<tr>
+ <th>コメント</th>
+ <td><%= post.introduction %></td>
+</tr>
+
+<tr>
+ <th>駐車場</th>
+ <td><%= post.parking %></td>
+</tr>
+<tr>
+ <th>ユーザーネーム</th>
+ <td><%= post.user.login_name %> </td>
+</tr>
+<% end %>
+<table>

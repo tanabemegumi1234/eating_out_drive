@@ -3,10 +3,9 @@ class CreatePosts < ActiveRecord::Migration[6.1]
     create_table :posts do |t|
 
       t.string :name,null: false
-      t.string :url,null: false
+      t.string :url
       t.text :introduction,null: false
-      t.integer :parking,null: false
-      t.integer :nickname,null: false
+      t.string :parking,null: false
       t.timestamps
     end
   end
