@@ -37,6 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :telephone_number,null: false
       t.string :login_name,null: false
       t.timestamps null: false
+      t.boolean "is_deleted", default: false, null: false
     end
 
     add_index :users, :email,                unique: true

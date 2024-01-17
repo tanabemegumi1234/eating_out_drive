@@ -6,12 +6,12 @@ class User < ApplicationRecord
          
   has_many :post, dependent: :destroy
   
-  def user_status
-    if is_deleted == true # is_deletedがfalseならtrueを返すようにしている
+   # is_deletedがfalseならtrueを返すようにしている
+  def use_status
+    if is_deleted == true
       "退会"
     else
       "有効"
     end
   end
-
 end

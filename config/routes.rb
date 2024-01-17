@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   # 管理者用
   namespace :admin do
-    get '/users' => 'users#index'
+    resources :users, only: [:index, :show,:edit,:update]
   end
   # 利用者用
   scope module: :public do
