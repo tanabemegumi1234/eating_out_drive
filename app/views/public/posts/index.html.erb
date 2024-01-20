@@ -29,6 +29,8 @@
  <th>ユーザーネーム</th>
  <td><%= post.user.login_name %> </td>
 </tr>
-
+<tr>
+ <td><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></td>
+</tr>
 <table>
 <% end %>
