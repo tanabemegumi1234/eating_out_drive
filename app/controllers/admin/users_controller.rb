@@ -5,6 +5,8 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
+    
   end
 
   def edit
@@ -20,6 +22,6 @@ class Admin::UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:full_name, :furigana, :email, :telephone_number, :login_name)
+    params.require(:user).permit(:full_name, :furigana, :email, :telephone_number, :login_name, :profile_image)
   end
 end

@@ -42,6 +42,6 @@ class Public::PostsController < ApplicationController
   private
   # ストロングパラメータ
   def post_params
-    params.require(:post).permit(:image, :name, :introduction, :url, :parking)
+    params.require(:post).permit(:image, :name, :introduction, :url, :parking, :profile_image)
   end
 end
