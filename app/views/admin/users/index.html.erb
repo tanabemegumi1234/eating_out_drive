@@ -1,26 +1,23 @@
 <div class="container">
-<h1>会員一覧</h1>
-<table class="table">
-  
-<tr>
-  <td>会員ID</td>
-  <td>氏名</td>
-  <td>メールアドレス</td>
-  <td>ステータス</td>
-</tr>
-
-</tr>
-<% @user.each do |user| %>
-<tr>
-  <td><%= user.id %></td>
-  <td>
-  <%= link_to admin_user_path(user)do %>
-  <%= user.full_name %>
-  <% end %>
-  </td>
-  <td><%= user.email %></td>
-  <td><%= user.user_status %></td>
-  <% end %>
-</tr>
-</table>
+  <h1>会員一覧</h1>
+    <table class="table">
+    <tr>
+      <td>会員ID</td>
+      <td>氏名</td>
+      <td>メールアドレス</td>
+      <td>ステータス</td>
+    </tr>
+    <% @user.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td>
+      <%= link_to admin_user_path(user)do %>
+      <%= user.full_name %>
+      <% end %>
+      </td>
+      <td><%= user.email %></td>
+      <td><%= user.user_status %></td>
+    <% end %>
+    </tr>
+  </table>
 </div>

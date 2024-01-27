@@ -5,8 +5,6 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page])
-    
   end
 
   def edit
@@ -14,9 +12,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-  user = User.find(params[:id])
-  user.update(user_params)
-  redirect_to admin_user_path(user)  
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to admin_user_path(user)  
   end
 
   private
