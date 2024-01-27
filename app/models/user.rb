@@ -26,4 +26,7 @@ class User < ApplicationRecord
       "有効"
     end
   end
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 end

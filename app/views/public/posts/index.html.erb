@@ -1,7 +1,7 @@
+<% if current_user %>
 <h1>投稿一覧</h1>
 <div class="card w-50 mx-auto mt-4 shadow-lg">
   <% @posts.each do |post| %>
- 
     <%= link_to post_path(post.id) do %>
      <%= image_tag post.get_image, class: "card-img-top"; %>
     <% end %>
@@ -19,9 +19,17 @@
           <p class="card-text"><%= post.introduction %></p>
           <span><i class="fas fa-user"></i><%= post.user.login_name %> ｜ </span>
           <span><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></span>
-
       </div>
     </div>
 </div>
   <% end %>
 <%= paginate @posts %>
+
+<% else %>
+<div class="card w-50 mx-auto mt-4 shadow-lg">
+    <div class="card-body">
+      <p class="card-text">閲覧する為にはログインが必要です。</p>
+      <%= link_to "ログイン", new_user_session_path,class: "btn btn-lg btn-block btn-info mt-4" %>
+    </div>
+  </div>
+<% end %>
