@@ -1,5 +1,5 @@
 <% if current_user %>
-<h1>投稿一覧</h1>
+
 <div class="card w-50 mx-auto mt-4 shadow-lg">
   <% @posts.each do |post| %>
     <%= link_to post_path(post.id) do %>
@@ -23,7 +23,9 @@
     </div>
 </div>
   <% end %>
-<%= paginate @posts %>
+  <%= paginate @posts %>
+
+
 
 <% else %>
 <div class="card w-50 mx-auto mt-4 shadow-lg">

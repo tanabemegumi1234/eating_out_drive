@@ -10,10 +10,11 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = current_user.post.new(post_params) #データを受け取り新規登録するためのインスタンス作成
-
     if @post.save
+      flash[:notice] = "投稿に成功しました。"
       redirect_to posts_path(@post.id)
     else
+      flash.now[:alert] = "投稿に失敗しました。" #キーをalertに変更
       render :new
     end
   end
