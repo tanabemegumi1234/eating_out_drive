@@ -26,8 +26,8 @@ Rails.application.routes.draw do
     get 'users/quit' => 'users#quit'# 退会確認画面
     patch  '/users/withdraw' => 'users#withdraw'# 論理削除用のルーティング
     resources :posts, only: [:new, :create, :index, :show, :edit, :destroy] do
-     resource :favorite, only: [:create, :destroy]
-     resources :post_comments, only: [:create, :destroy]
+    resource :favorite, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
    end
     patch 'posts/:id' => 'posts#update', as: 'update_post'
     
